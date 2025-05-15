@@ -1,6 +1,6 @@
 "use client";
 
-import { bookmarkPostApi, likePostApi } from "@/services/postServices";
+// import { bookmarkPostApi, likePostApi } from "@/services/postServices";
 import ButtonIcon from "@/ui/ButtonIcon";
 import { toPersianDigits } from "@/utils/numberFormatter";
 

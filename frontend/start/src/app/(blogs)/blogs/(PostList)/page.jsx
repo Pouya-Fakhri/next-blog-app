@@ -1,7 +1,7 @@
 import PostList from "../_components/PostList";
 import { cookies } from "next/headers";
 import setCookieOnReq from "@/utils/setCookieOnReq";
-import { getPosts } from "@/services/postServices";
+// import { getPosts } from "@/services/postServices";
 import queryString from "query-string";
 import Pagination from "@/ui/Pagination";
 
@@ -11,7 +11,7 @@ async function BlogPage({ searchParams }) {
   const queries = queryString.stringify(await searchParams);
   const cookieStore = await cookies();
   const options = setCookieOnReq(cookieStore);
-  const { posts, totalPages } = await getPosts(queries, options);
+  // const { posts, totalPages } = await getPosts(queries, options);
 
   const { search } = await searchParams
 
@@ -25,9 +25,9 @@ async function BlogPage({ searchParams }) {
           <span className="font-bold">&quot;{search}&quot;</span>
         </p>
       ) : null}
-      <PostList posts={posts} />
+      {/* <PostList posts={posts} /> */}
       <div className="flex w-full justify-center my-8">
-        <Pagination totalPages={totalPages} />
+        {/* <Pagination totalPages={totalPages} /> */}
       </div>
     </>
   );
