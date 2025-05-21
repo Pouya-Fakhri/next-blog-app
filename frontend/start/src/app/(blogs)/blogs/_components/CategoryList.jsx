@@ -1,11 +1,13 @@
+import axios from "axios";
 import Link from "next/link";
 
 async function CategoryList() {
-  // await new Promise((res) => setTimeout(res, 2000));
-  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/category/list`);
-  const {
-    data: { categories },
-  } = await res.json();
+  const respons = await axios
+    .get("http://localhost:5000/api/category/list")
+    .then(({ data }) => data);
+  const {data: { categories }} = await respons
+
+  console.log(categories);
 
   return (
     <ul className="space-y-4">

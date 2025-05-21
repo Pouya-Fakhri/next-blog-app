@@ -15,6 +15,10 @@ async function Category({ params, searchParams }) {
   const options = setCookieOnReq(cookieStore);
   const { posts } = await getPosts(queries, options);
 
+
+
+
+
   return (
     <div>
       {posts.length === 0 ? (

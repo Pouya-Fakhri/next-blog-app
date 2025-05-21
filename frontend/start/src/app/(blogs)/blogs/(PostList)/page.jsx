@@ -8,10 +8,9 @@ import Pagination from "@/ui/Pagination";
 // export const experimental_ppr = true; // STATIC + DYNAMIC => PPR
 
 async function BlogPage({ searchParams }) {
-  const queries = queryString.stringify(await searchParams);
+  
   const cookieStore = await cookies();
-  const options = setCookieOnReq(cookieStore);
-  // const { posts, totalPages } = await getPosts(queries, options);
+
 
   const { search } = await searchParams
 
