@@ -3,11 +3,11 @@ import Link from "next/link";
 
 async function CategoryList() {
   const respons = await axios
-    .get("http://localhost:5000/api/category/list")
+    .get(`${process.env.NEXT_PUBLIC_BASE_URL}/category/list`)
     .then(({ data }) => data);
   const {data: { categories }} = await respons
 
-  console.log(categories);
+  
 
   return (
     <ul className="space-y-4">
