@@ -1,8 +1,7 @@
 import { getPostBySlug, getPosts } from "@/services/postServices";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import RelatedPost from "../_components/RelatedPost";
-import PostComment from "../_components/comment/PostComment";
+
 
 // export const metadata = {
 //   title: "post #1",
@@ -44,8 +43,8 @@ async function SinglePost({ params }) {
           alt={post.briefText}
         />
       </div>
-      {post.related.length > 0 && <RelatedPost posts={post.related} />}
-      <PostComment post={post} />
+      {/* {post.related.length > 0 && <RelatedPost posts={post.related} />}
+      <PostComment post={post} /> */}
     </div>
   );
 }

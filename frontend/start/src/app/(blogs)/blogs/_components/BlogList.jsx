@@ -3,6 +3,7 @@ import Link from "next/link";
 import CoverImage from "./coverImage";
 import Image from "next/image";
 import { ClockIcon } from "@heroicons/react/24/outline";
+import BlogFeturs from "./BlogFeturs";
 
 async function BlogList() {
   const respons = await axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}/post/list`).then(({ data }) => data);
@@ -41,6 +42,7 @@ async function BlogList() {
                 <span>دقیقه</span>
               </div>
             </div>
+              <BlogFeturs post={post} />
           </div>
         </div>
       ))}
