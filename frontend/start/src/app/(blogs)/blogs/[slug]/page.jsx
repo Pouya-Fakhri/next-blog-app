@@ -2,11 +2,6 @@ import { getPostBySlug, getPosts } from "@/services/postServices";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 
-
-// export const metadata = {
-//   title: "post #1",
-// };
-
 export const dynamicParams = false;
 
 export async function generateStaticParams() {
@@ -23,7 +18,6 @@ export async function generateMetadata({ params }) {
 }
 
 async function SinglePost({ params }) {
-  //   await new Promise((res) => setTimeout(res, 2000));
   const post = await getPostBySlug(params.slug);
 
   if (!post) notFound();
@@ -43,8 +37,6 @@ async function SinglePost({ params }) {
           alt={post.briefText}
         />
       </div>
-      {/* {post.related.length > 0 && <RelatedPost posts={post.related} />}
-      <PostComment post={post} /> */}
     </div>
   );
 }

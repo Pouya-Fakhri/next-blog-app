@@ -1,6 +1,6 @@
 import { getPosts } from "@/services/postServices";
 import setCookieOnReq from "@/utils/setCookieOnReq";
-import PostList from "../../../_components/PostList";
+import BlogList from "app/(blogs)/blogs/_components/BlogList";
 import { cookies } from "next/headers";
 import queryString from "query-string";
 
@@ -22,7 +22,7 @@ async function Category({ params, searchParams }) {
           پستی در این دسته بندی پیدا نشد
         </p>
       ) : (
-        <PostList posts={posts} />
+        <BlogList />
       )}
     </div>
   );
